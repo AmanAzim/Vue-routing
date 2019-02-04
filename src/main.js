@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
-import { routes } from "./routes"; //the { same }  from "./same"  means the name of the route array and its js fine have to be same
+import { routes } from "./routes"; // fised name : { routes } as the array of route objects
 
 Vue.use(VueRouter);
 
-const router=new VueRouter({routes});
+const router=new VueRouter({
+    routes,
+    mode:'history' });
 
 new Vue({
   el: '#app',
