@@ -23,7 +23,11 @@
         },
         methods:{
             navigateToHome(){
-                this.$router.push('/');
+               // this.$router.push('/');
+
+               // this.$router.push( {path:'', component:Home} );
+
+                this.$router.push({name: 'Home'});
             }
         }
     }
