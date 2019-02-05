@@ -24,10 +24,12 @@
         beforeRouteLeave(to, from, next){
             if(this.confirm){
                 next();
-            }else if(alert('Are you sure?')){
-                next();
             }else{
-                next(false);
+                if(alert('Are you sure?')){
+                    next();
+                }else{
+                    next(false);
+                }
             }
         }
     }
