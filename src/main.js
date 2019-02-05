@@ -7,7 +7,18 @@ Vue.use(VueRouter); //step 2: use the imported library
 
 const router=new VueRouter({
     routes,
-    mode:'history' });  //step 4: create new router instance by passing the imported routes object array
+    mode:'history',
+    scrollBehavior(to, from, savedPosition){
+        //return{x:0, y:700};
+        if(savedPosition) {
+            return savedPosition;
+        }
+        if(to.hash){
+            return{ selector:to.hash };
+        }
+        return {x:0, y:0};
+    }
+});  //step 4: create new router instance by passing the imported routes object array
 
 new Vue({
   el: '#app',

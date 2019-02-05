@@ -4,5 +4,9 @@
        <p>User id: {{$route.params.id}}</p>
        <p>Query key: {{$route.query.key1}}</p>
        <p>Query p: {{$route.query.q}}</p>
+
+       <div style="height: 700px"></div>
+
+       <p id="data">Extra texts..</p>
    </div>
 </template>
