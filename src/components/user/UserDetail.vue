@@ -22,6 +22,14 @@
                        query:{ key1:'Value1', q:100 },
                        hash:'#data'}
             };
+        },
+        beforeRouteEnter(to, from, next){ //just to test
+            console.log("Before creating UserDetail with beforeRouteEnter() method")
+            if(true){
+                next();
+            }else{
+                next(false);
+            }
         }
     }
 </script>

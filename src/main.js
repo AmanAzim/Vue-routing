@@ -20,6 +20,11 @@ const router=new VueRouter({
     }
 });  //step 4: create new router instance by passing the imported routes object array
 
+router.beforeEach((to, from, next)=>{
+    console.log('Global beforeEach() method');
+    next();
+});
+
 new Vue({
   el: '#app',
   router, // step 5: register the router instance in the root vue instance

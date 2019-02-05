@@ -11,7 +11,7 @@ export const routes=[
     {path:'', name:'Home' , components:{default:Home, 'header-top':Header}},
     {path:'/user', components:{default:User, 'header-bottom':Header}, children:[
             {path:'/user/', component:UserStart},
-            {path:':id', component:UserDetail},
+            {path:':id', component:UserDetail, beforeEnter:(to, from, next)=>{console.log("local beforeEnter() in userDetail"); next();} },
             {path:':id/edit', component:UserEdit, name:'UserEdit'}
         ]},
     {path:'/anything', redirect:{name:'Home'} },
